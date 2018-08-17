@@ -1,0 +1,108 @@
+<ns:zakLk01
+    xmlns:ns="http://www.egem.nl/StUF/sector/zkn/0310"
+    xmlns:stuf="http://www.egem.nl/StUF/StUF0301"
+    xmlns:xlin="http://www.w3.org/1999/xlink"
+    xmlns:gml="http://www.opengis.net/gml"
+    xmlns:ns1="http://www.egem.nl/StUF/sector/bg/0310">
+    <!-- WIZportaal versie 3.1 en hoger -->
+    <ns:stuurgegevens>
+        <stuf:berichtcode>Lk01</stuf:berichtcode>
+        <stuf:zender>
+            <stuf:organisatie>00000001001567834000_T</stuf:organisatie>
+            <stuf:applicatie>WEB</stuf:applicatie>
+            <stuf:gebruiker>Webuser</stuf:gebruiker>
+        </stuf:zender>
+        <stuf:ontvanger>
+            <!-- Verplicht: OIN -->
+            <stuf:organisatie>00000001001567834000_T</stuf:organisatie>
+            <stuf:applicatie>WIZportaal</stuf:applicatie>
+            <!-- Verplicht: moet een waarde bevatten, verplichting is vanaf versie 3.1 -->
+            <stuf:gebruiker>WIZP-WSH</stuf:gebruiker>
+        </stuf:ontvanger>
+        <stuf:referentienummer>web001</stuf:referentienummer>
+        <stuf:tijdstipBericht>201710141428</stuf:tijdstipBericht>
+        <stuf:entiteittype>ZAK</stuf:entiteittype>
+    </ns:stuurgegevens>
+    <ns:parameters>
+        <stuf:mutatiesoort>T</stuf:mutatiesoort>
+        <stuf:indicatorOvername>V</stuf:indicatorOvername>
+    </ns:parameters>
+    <ns:object stuf:entiteittype="ZAK" stuf:verwerkingssoort="T">
+        <ns:kenmerk>
+            <!-- Voor de logging, aanvraag- of formuliernummer van bronsysteem: -->
+            <ns:kenmerk>EF-124</ns:kenmerk>
+            <!-- Voor de logging, naam van bronsysteem/webformulieromgeving: -->
+            <ns:bron>E-form systems</ns:bron>
+        </ns:kenmerk>
+        <ns:resultaat>
+            <!-- Verplicht, Type afhandeling: waarde uit WIZportaal referentielijst melding afhandelingstype -->
+            <ns:omschrijving>inzet samenkracht</ns:omschrijving>
+        </ns:resultaat>
+        <!-- Verplicht, datum melding (Formaat: yyyymmdd) -->
+        <ns:startdatum>20161104</ns:startdatum>
+        <!-- Semantiek, zaakniveau is hoofdzaak: -->
+        <ns:zaakniveau>1</ns:zaakniveau>
+        <!-- Semantiek, er is geen deelzaak: -->
+        <ns:deelzakenIndicatie>N</ns:deelzakenIndicatie>
+        <stuf:extraElementen>
+            <!-- Verplicht, Wijze van melden door burger: waarde uit WIZportaal referentielijst binnenkomst melding -->
+            <stuf:extraElement naam="binnenkomstMelding">per webformulier</stuf:extraElement>
+        </stuf:extraElementen>
+        <ns:isVan stuf:entiteittype="ZAKZKT" stuf:verwerkingssoort="T">
+            <ns:gerelateerde stuf:entiteittype="ZKT" stuf:verwerkingssoort="T">
+                <!-- Verplicht, Soort melding: waarde uit WIZportaal referentielijst melding type -->
+                <ns:code>zorgmelding</ns:code>
+            </ns:gerelateerde>
+        </ns:isVan>
+        <!-- Op wie/wat heeft de melding betrekking: -->
+        <ns:heeftBetrekkingOp stuf:entiteittype="ZAKOBJ" stuf:verwerkingssoort="T">
+            <!-- Verplicht, beschrijving van de melding: -->
+            <ns:omschrijving>Dit is de melding zelf, er iets aparts aan de hand bij de buurman</ns:omschrijving>
+        </ns:heeftBetrekkingOp>
+        <!-- Wie heeft de melding ingediend: -->
+        <ns:heeftAlsInitiator stuf:entiteittype="ZAKBTRINI" stuf:verwerkingssoort="T">
+            <ns:gerelateerde>
+                <ns:nietNatuurlijkPersoon stuf:entiteittype="NNP" stuf:verwerkingssoort="T">
+                    <!-- Optioneel, organisatienaam: -->
+                    <ns1:statutaireNaam>De Vries B.V.</ns1:statutaireNaam>
+                    <!-- Optioneel locatie melder: -->
+                    <ns1:bezoekadres>
+                        <!-- Optioneel, postcode als melding door een organisatie gedaan is (Formaat, zonder spaties: 1234AB): -->
+                        <ns1:aoa.postcode>1234AB</ns1:aoa.postcode>
+                    </ns1:bezoekadres>
+                </ns:nietNatuurlijkPersoon>
+            </ns:gerelateerde>
+            <stuf:extraElementen>
+                <!-- Verplicht, Soort melder: waarde uit WIZportaal referentielijst type melder -->
+                <stuf:extraElement naam="soortMelder">burger over zichzelf</stuf:extraElement>
+                <!-- Verplicht, Is de melding anoniem gedaan:-->
+                <stuf:extraElement naam="indicatieAnoniem">false</stuf:extraElement>
+            </stuf:extraElementen>
+            <ns:heeftAlsAanspreekpunt stuf:entiteittype="ZAKBTRINICTP" stuf:verwerkingssoort="T">
+                <ns:gerelateerde stuf:entiteittype="CTP" stuf:verwerkingssoort="T">
+                    <!-- Voorwaardelijk verplicht, Naam van de melder als de melding door een organisatie gedaan is:-->
+                    <ns:naam>Harrie de Vries</ns:naam>
+                    <!-- Optioneel, Telefoonnummer indiener: -->
+                    <ns:telefoonnummer>0612341234</ns:telefoonnummer>
+                    <!-- Optioneel, E-mailadres indiener:-->
+                    <ns:emailadres>schoof@example.com</ns:emailadres>
+                </ns:gerelateerde>
+            </ns:heeftAlsAanspreekpunt>
+        </ns:heeftAlsInitiator>
+        <!-- Verantwoordelijk voor de inhoudelijke afhandeling van de melding:-->
+        <ns:heeftAlsVerantwoordelijke stuf:entiteittype="ZAKBTRVRA" stuf:verwerkingssoort="T">
+            <ns:gerelateerde>
+                <ns:organisatorischeEenheid stuf:entiteittype="OEH" stuf:verwerkingssoort="T">
+                    <!-- Optioneel, Behandelend team: waarde uit WIZportaal referentielijst team -->
+                    <ns:naam>team 2</ns:naam>
+                </ns:organisatorischeEenheid>
+            </ns:gerelateerde>
+        </ns:heeftAlsVerantwoordelijke>
+        <ns:heeft stuf:entiteittype="ZAKSTT">
+            <ns:gerelateerde stuf:entiteittype="STT">
+                <!-- Optioneel, Melding is afgehandeld: waarde uit WIZportaal referentielijst zaakstatus met eigenschap 'zaak is definitief' -->
+                <ns:omschrijving>zaakstatus</ns:omschrijving>
+            </ns:gerelateerde>
+        </ns:heeft>
+    </ns:object>
+</ns:zakLk01>
