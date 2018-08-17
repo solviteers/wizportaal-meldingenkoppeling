@@ -15,7 +15,8 @@ Hierin is aangeven welk veld verplicht is, en met welk referentieveld in WIZport
 
 ## Mapping xml-velden naar WIZportaal
 
-|*WIZportaal veld frontend*|*Verplicht*|*Toelichting*|*Datatype*|*StUF Zaken*|
+|WIZportaal veld frontend|Verplicht|Toelichting|Datatype|StUF Zaken|
+|---|---|---|---|---|
 |soort melding| |Code soort omschrijving|Waarde uit referentielijst: melding type|//object/isVan/gerelateerde/code |
 |binnenkomst melding| |Wijze van melden door burger|Waarde uit referentielijst: binnenkomst melding|//object/extraElementen/extraElement[@naam="binnenkomstMelding"]|
 |datum melding|ja| |datum: yyyymmdd|//object/startdatum|
